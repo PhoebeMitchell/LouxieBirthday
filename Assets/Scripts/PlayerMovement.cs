@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public float MovementX { get; set; }
-    public bool Grounded { get; set; }
+    public bool IsGrounded { get; set; }
 
     private void Awake()
     {
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (Grounded)
+        if (IsGrounded)
         {
             _rigidbody2D.velocity = new Vector2(MovementX * _speed, _rigidbody2D.velocity.y);
         }
